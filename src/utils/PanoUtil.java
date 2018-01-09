@@ -66,6 +66,9 @@ public class PanoUtil {
                 if (heading > 2 * Math.PI) {
                     heading -= 2 * Math.PI;
                 }
+                if (heading < 0) {
+                    heading += 2 * Math.PI;
+                }
                 int sourceX = (int) Math.round(sourceWidth * heading / (Math.PI * 2));
                 int sourceY = (int) Math.round(sourceHeight * pitch / Math.PI);
                 int pixel = ImageUtil.getPixel(image, sourceX, sourceY);
@@ -116,7 +119,9 @@ public class PanoUtil {
                 if (heading >= 2 * Math.PI) {
                     heading -= 2 * Math.PI;
                 }
-
+                if (heading < 0) {
+                    heading += 2 * Math.PI;
+                }
                 int sourceX = (int) Math.round(sourceWidth * heading / (Math.PI * 2));
                 int sourceY = (int) Math.round(sourceHeight * pitch / Math.PI);
 
@@ -154,6 +159,9 @@ public class PanoUtil {
                 heading +=ImageUtil.angleToRadian(angle);
                 if (heading >= 2 * Math.PI) {
                     heading -= 2 * Math.PI;
+                }
+                if (heading < 0) {
+                    heading += 2 * Math.PI;
                 }
                 double r = Math.sqrt(x1 * x1 + y1 * y1);
                 double pitch = Math.atan((height / 2) / r);
@@ -193,10 +201,14 @@ public class PanoUtil {
                 } else if (y1 < 0 && x1 >= 0) {
                     heading = Math.PI + heading;
                 }
+                heading +=ImageUtil.angleToRadian(angle);
                 if (heading >= 2 * Math.PI) {
                     heading -= 2 * Math.PI;
                 }
-                heading +=ImageUtil.angleToRadian(angle);
+                if (heading < 0) {
+                    heading += 2 * Math.PI;
+                }
+
                 double r = Math.sqrt(x1 * x1 + y1 * y1);
                 double pitch = Math.atan((height / 2) / r);
                 pitch = Math.PI / 2 + pitch;

@@ -10,7 +10,7 @@ import java.util.concurrent.*;
 public class Main {
    public static int height=1024;
    public static double rate=3;
-   public static double angle=0;
+   public static double angle=70;
 
    public class  PanoCallable implements Callable<String> {
 
@@ -99,7 +99,7 @@ public class Main {
         {
             for(int j=0;j<bottomImage.getHeight();j++)
             {
-                System.out.println(i+"--"+j);
+
                 bufferedImage.setRGB((int)(i+height*(2+rate*3)),j,bottomImage.getRGB(i,j));
             }
         }
