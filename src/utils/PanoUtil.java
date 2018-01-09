@@ -179,7 +179,7 @@ public class PanoUtil {
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
                 double x1 = (x - width / 2.0);
-                double y1 = (y - height / 2.0);
+                double y1 = ((height-y) - height / 2.0);
                 double heading = Math.atan(Math.abs(y1) / Math.abs(x1));
 
                 if (y1 < 0 && x1 < 0) {

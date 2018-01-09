@@ -9,8 +9,8 @@ import java.util.concurrent.*;
 
 public class Main {
    public static int height=1024;
-   public static double rate=1;
-   public static double angle=30;
+   public static double rate=3;
+   public static double angle=0;
 
    public class  PanoCallable implements Callable<String> {
 
