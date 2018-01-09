@@ -34,7 +34,7 @@ public class PanoUtil {
                 double length = Math.sqrt((tall / 2.0) * (tall / 2.0) + (x - height / 2.0) * (x - height / 2.0));
                 double pitch = Math.PI / 2 + Math.atan((y - height / 2.0) / length);
 
-                heading += angle;
+                heading +=ImageUtil.angleToRadian(angle);
                 if (heading < 0) {
                     heading += 2 * Math.PI;
                 }
@@ -62,7 +62,7 @@ public class PanoUtil {
                 double heading = Math.PI / 2 + Math.atan((x - (width / 2.0)) / (height / 2.0));
                 double length = Math.sqrt((height / 2.0) * (height / 2.0) + (x - width / 2.0) * (x - width / 2.0));
                 double pitch = Math.PI / 2 + Math.atan((y - height / 2.0) / length);
-                heading += angle;
+                heading +=ImageUtil.angleToRadian(angle);
                 if (heading > 2 * Math.PI) {
                     heading -= 2 * Math.PI;
                 }
@@ -85,7 +85,7 @@ public class PanoUtil {
                 double heading = Math.atan((x - height / 2.0) / (tall / 2.0)) + Math.PI;
                 double length = Math.sqrt((tall / 2.0) * (tall / 2.0) + (x - height / 2.0) * (x - height / 2.0));
                 double pitch = Math.PI / 2 + Math.atan((y - height / 2.0) / length);
-                heading += angle;
+                heading +=ImageUtil.angleToRadian(angle);
                 if (heading < 0) {
                     heading += 2 * Math.PI;
                 }
@@ -112,7 +112,7 @@ public class PanoUtil {
                 double heading = Math.PI * 3 / 2 + Math.atan((x - (width / 2.0)) / (height / 2.0));
                 double length = Math.sqrt((height / 2.0) * (height / 2.0) + (x - width / 2.0) * (x - width / 2.0));
                 double pitch = Math.PI / 2 + Math.atan((y - height / 2.0) / length);
-                heading += angle;
+                heading +=ImageUtil.angleToRadian(angle);
                 if (heading >= 2 * Math.PI) {
                     heading -= 2 * Math.PI;
                 }
@@ -138,6 +138,7 @@ public class PanoUtil {
                 double x1 = (x - width / 2.0);
                 double y1 = (y - height / 2.0);
                 double heading = Math.atan(Math.abs(y1) / Math.abs(x1));
+
                 if (y1 < 0 && x1 < 0) {
 
                     heading = Math.PI * 2 - heading;
@@ -150,7 +151,7 @@ public class PanoUtil {
                 } else if (y1 < 0 && x1 >= 0) {
                     heading = Math.PI + heading;
                 }
-
+                heading +=ImageUtil.angleToRadian(angle);
                 if (heading >= 2 * Math.PI) {
                     heading -= 2 * Math.PI;
                 }
@@ -180,6 +181,7 @@ public class PanoUtil {
                 double x1 = (x - width / 2.0);
                 double y1 = (y - height / 2.0);
                 double heading = Math.atan(Math.abs(y1) / Math.abs(x1));
+
                 if (y1 < 0 && x1 < 0) {
                     heading = Math.PI * 2 - heading;
                 } else if (y1 >= 0 && x1 < 0) {
@@ -194,6 +196,7 @@ public class PanoUtil {
                 if (heading >= 2 * Math.PI) {
                     heading -= 2 * Math.PI;
                 }
+                heading +=ImageUtil.angleToRadian(angle);
                 double r = Math.sqrt(x1 * x1 + y1 * y1);
                 double pitch = Math.atan((height / 2) / r);
                 pitch = Math.PI / 2 + pitch;

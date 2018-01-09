@@ -53,7 +53,10 @@ public class ImageUtil {
     {
         image.setRGB(x,y,color);
     }
-
+    public static double angleToRadian(double angle)
+    {
+        return angle*Math.PI/180;
+    }
     public static double angleBetweenVector(double x1,double y1,double x2,double y2) {
         double downpart = (Math.sqrt(x1 * x1 + y1 * y1) * Math.sqrt(x2 * x2 + y2 * y2));
         if(downpart == 0) {

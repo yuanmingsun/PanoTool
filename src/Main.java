@@ -10,7 +10,7 @@ import java.util.concurrent.*;
 public class Main {
    public static int height=1024;
    public static double rate=1;
-   public static double angle=0;
+   public static double angle=30;
 
    public class  PanoCallable implements Callable<String> {
 
@@ -103,7 +103,7 @@ public class Main {
                 bufferedImage.setRGB((int)(i+height*(2+rate*3)),j,bottomImage.getRGB(i,j));
             }
         }
-        ImageIO.write( bufferedImage,"png",new File("d://cube_pano.png"));
+        ImageIO.write( bufferedImage,"png",new File("d://cube_pano3.png"));
     }
     public static void main(String[] args) {
       //  ExecutorService executorService= Executors.newFixedThreadPool(3);
