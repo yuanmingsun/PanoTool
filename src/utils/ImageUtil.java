@@ -57,12 +57,5 @@ public class ImageUtil {
     {
         return angle*Math.PI/180;
     }
-    public static double angleBetweenVector(double x1,double y1,double x2,double y2) {
-        double downpart = (Math.sqrt(x1 * x1 + y1 * y1) * Math.sqrt(x2 * x2 + y2 * y2));
-        if(downpart == 0) {
-            return 0;
-        }
-        double a = Math.acos((x1 * x2 + y1 * y2) / downpart);
-        return a;
-    }
+
 }
